@@ -4,7 +4,9 @@
       <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
     </a>
     <a>
-      <v-icon class="mr-4">mdi-dock-window</v-icon>
+      <v-icon class="mr-4" @click="$emit('createNewWindow')"
+        >mdi-dock-window</v-icon
+      >
     </a>
     <a>
       <v-icon class="mr-4">mdi-desk-lamp</v-icon>

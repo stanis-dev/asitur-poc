@@ -2,47 +2,21 @@
   <v-app>
     <template>
       <SystemBar :userIsLoggedIn="userIsLoggedIn" />
-      <AppTopBar v-if="userIsLoggedIn" />
+      <AppTopBar v-if="userIsLoggedIn" @createNewWindow="createNewWindow" />
     </template>
-    <v-main>
-      <v-container>
-        <div id="resizable" class="ui-state-active">
-          <v-system-bar color="indigo darken-2" class="header">
-            <span class="white--text">Expediente 2021/13 [Incomodidad]</span>
-            <v-spacer></v-spacer>
-            <v-icon class="white--text">mdi-window-minimize</v-icon>
-            <v-icon class="white--text">mdi-close</v-icon>
-          </v-system-bar>
-          <v-system-bar color="#efebde" dense>
-            <a>
-              <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
-            </a>
-            <a>
-              <v-icon class="mr-4">mdi-dock-window</v-icon>
-            </a>
-            <a>
-              <v-icon class="mr-4">mdi-desk-lamp</v-icon>
-            </a>
-            <a>
-              <v-icon class="mr-4">mdi-clipboard-text-search-outline</v-icon>
-            </a>
-            <a>
-              <v-icon class="mr-4">mdi-folder-search-outline</v-icon>
-            </a>
-            <a>
-              <v-icon class="mr-4">mdi-email-search-outline</v-icon>
-            </a>
-          </v-system-bar>
-          <v-card elevation="2"> </v-card>
-          <v-card-title> Hello there! </v-card-title>
-          <v-card-subtitle>Subtitle text</v-card-subtitle>
-          <v-card-text
-            >Greyhound divisively hello coldly wonderfully marginally far upon
-            excluding.
-          </v-card-text>
-        </div>
-        <nuxt />
-      </v-container>
+    <v-main id="main" ref="main">
+      <Window
+        v-for="(window, i) in windows"
+        @setToTop="activeWindow = i"
+        @closeWindow="closeWindow(i)"
+        :key="i"
+        :id="'window' + i"
+        class="resizable-draggable-window"
+        :class="{ active: i === activeWindow }"
+        :style="{ zIndex: 100 + i }"
+        :window="window"
+      />
+      <nuxt />
     </v-main>
 
     <v-footer app>
@@ -55,7 +29,8 @@
 export default {
   data() {
     return {
-      title: 'Asitur'
+      windows: [],
+      activeWindow: 0
     }
   },
   computed: {
@@ -63,26 +38,34 @@ export default {
       return this.$store.state.user.user ? true : false
     }
   },
-  mounted() {
-    $(function () {
-      $('#resizable')
-        .resizable({
-          containment: '.v-main__wrap'
-        })
-        .draggable({
-          containment: '.v-main__wrap',
-          handle: '.header'
-        })
-    })
+  methods: {
+    createNewWindow() {
+      console.log('Create a new window')
+      this.windows.push('Window ' + this.windows.length)
+    },
+    closeWindow() {
+      console.log('closing a window ' + this.activeWindow)
+      this.windows.splice(this.activeWindow, 1)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .ui-state-active {
-  width: 50%;
+  width: 400px;
   border: 1px solid #3f51b5;
   background: #efebde;
   color: black;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.resizable-draggable-window {
+  position: absolute;
+
+  &.active {
+    z-index: 200 !important;
+  }
 }
 </style>

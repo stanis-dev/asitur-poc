@@ -18,6 +18,16 @@
           </v-list-item>
         </v-list>
       </v-menu>
+      <v-menu bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <a
+            class="body-2 mr-4 text-decoration-none black--text"
+            @click="logout"
+          >
+            Salir
+          </a>
+        </template>
+      </v-menu>
     </v-row>
     <v-row v-else>
       <a
@@ -51,8 +61,7 @@ export default {
         { text: 'Indexación' },
         { text: 'Facturación' },
         { text: 'Herramientas' },
-        { text: 'Mantenimiento' },
-        { text: 'Salir' }
+        { text: 'Mantenimiento' }
       ],
       UserAgentApplication: null,
       error: null,
@@ -70,7 +79,9 @@ export default {
     this.UserAgentApplication = new UserAgentApplication({
       auth: {
         clientId: '86eb2405-9979-456e-b0f5-9c8b080cd194',
-        /* redirectUri: 'http://localhost:3000' */
+        /*  redirectUri: 'http://localhost:3000', */
+        /* logout: 'http://localhost:3000' */
+        logout: 'https://gentle-glacier-0227bed03.azurestaticapps.net',
         redirectUri: 'https://gentle-glacier-0227bed03.azurestaticapps.net'
       },
       cache: {
@@ -114,7 +125,7 @@ export default {
         return silentResult.accessToken
       } catch (err) {
         if (this.isInteractionRequired(err)) {
-          var interactiveResult = await this.UserAgentApplication.acquireTokenPopup(
+          const interactiveResult = await this.UserAgentApplication.acquireTokenPopup(
             {
               scopes: scopes
             }
