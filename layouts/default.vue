@@ -1,48 +1,52 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-    </v-app-bar>
+  <v-app>
+    <template>
+      <SystemBar :userIsLoggedIn="userIsLoggedIn" />
+      <AppTopBar v-if="userIsLoggedIn" />
+    </template>
     <v-main>
       <v-container>
+        <div id="resizable" class="ui-state-active">
+          <v-system-bar color="indigo darken-2" class="header">
+            <span class="white--text">Expediente 2021/13 [Incomodidad]</span>
+            <v-spacer></v-spacer>
+            <v-icon class="white--text">mdi-window-minimize</v-icon>
+            <v-icon class="white--text">mdi-close</v-icon>
+          </v-system-bar>
+          <v-system-bar color="#efebde" dense>
+            <a>
+              <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
+            </a>
+            <a>
+              <v-icon class="mr-4">mdi-dock-window</v-icon>
+            </a>
+            <a>
+              <v-icon class="mr-4">mdi-desk-lamp</v-icon>
+            </a>
+            <a>
+              <v-icon class="mr-4">mdi-clipboard-text-search-outline</v-icon>
+            </a>
+            <a>
+              <v-icon class="mr-4">mdi-folder-search-outline</v-icon>
+            </a>
+            <a>
+              <v-icon class="mr-4">mdi-email-search-outline</v-icon>
+            </a>
+          </v-system-bar>
+          <v-card elevation="2"> </v-card>
+          <v-card-title> Hello there! </v-card-title>
+          <v-card-subtitle>Subtitle text</v-card-subtitle>
+          <v-card-text
+            >Greyhound divisively hello coldly wonderfully marginally far upon
+            excluding.
+          </v-card-text>
+        </div>
         <nuxt />
       </v-container>
     </v-main>
 
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} Kiteris</span>
+    <v-footer app>
+      <span>&copy; {{ new Date().getFullYear() }} Asitur</span>
     </v-footer>
   </v-app>
 </template>
@@ -51,26 +55,34 @@
 export default {
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Asitur',
+      title: 'Asitur'
     }
   },
+  computed: {
+    userIsLoggedIn() {
+      return this.$store.state.user.user ? true : false
+    }
+  },
+  mounted() {
+    $(function () {
+      $('#resizable')
+        .resizable({
+          containment: '.v-main__wrap'
+        })
+        .draggable({
+          containment: '.v-main__wrap',
+          handle: '.header'
+        })
+    })
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+.ui-state-active {
+  width: 50%;
+  border: 1px solid #3f51b5;
+  background: #efebde;
+  color: black;
+}
+</style>
