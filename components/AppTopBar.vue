@@ -4,9 +4,7 @@
       <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
     </a>
     <a>
-      <v-icon class="mr-4" @click="$emit('createNewWindow')"
-        >mdi-dock-window</v-icon
-      >
+      <v-icon class="mr-4" @click="createNewWindow">mdi-dock-window</v-icon>
     </a>
     <a>
       <v-icon class="mr-4">mdi-desk-lamp</v-icon>
@@ -34,15 +32,23 @@
     </a>
 
     <v-spacer></v-spacer>
-    <v-toolbar-title v-text="title" />
+    <span class="mr-4">Usuario: {{ user.user.displayName }}</span>
   </v-app-bar>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
       title: 'Asitur'
+    }
+  },
+  computed: mapState(['user']),
+  methods: {
+    createNewWindow() {
+      this.$store.commit('windows/pushNewWindow')
     }
   }
 }
