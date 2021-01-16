@@ -6,7 +6,8 @@ export const mutations = {
   pushNewWindow(state) {
     const newWindow = {
       title: `Window ${state.openWindows.length}`,
-      id: Date.now()
+      id: Date.now(),
+      state: 'max'
     }
 
     state.openWindows.push(newWindow)
@@ -24,11 +25,19 @@ export const mutations = {
       (window) => window.id === id
     )
 
-    /*  window.id === id
-        ? 
-        : 0 */
-
     state.openWindows.push(state.openWindows.splice(windowIndex, 1)[0])
+  },
+
+  minimizeWindow(state, id) {
+    state.openWindows.map((window) =>
+      window.id === id ? (window.state = 'min') : 0
+    )
+  },
+
+  maximizeWindow(state, id) {
+    state.openWindows.map((window) =>
+      window.id === id ? (window.state = 'max') : 0
+    )
   }
 }
 

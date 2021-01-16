@@ -5,9 +5,7 @@
       <AppTopBar v-if="userIsLoggedIn" />
     </template>
     <TheMainContainer />
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }} Asitur</span>
-    </v-footer>
+    <TheFooter />
   </v-app>
 </template>
 
