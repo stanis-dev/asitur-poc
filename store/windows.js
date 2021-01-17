@@ -12,6 +12,7 @@ export const mutations = {
     }
 
     state.openWindows.push(newWindow)
+    state.activeWindow = newWindow.id
   },
 
   deleteWindow(state, id) {
@@ -27,6 +28,7 @@ export const mutations = {
     )
 
     state.openWindows.push(state.openWindows.splice(windowIndex, 1)[0])
+    state.activeWindow = id
   },
 
   minimizeWindow(state, id) {
