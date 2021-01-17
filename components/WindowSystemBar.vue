@@ -1,6 +1,11 @@
 <template>
   <div>
-    <v-system-bar color="indigo darken-2" class="header">
+    <v-system-bar
+      :color="
+        activeWindow === window.id ? 'indigo darken-2' : 'indigo lighten-2'
+      "
+      class="header"
+    >
       <span class="white--text">{{ window.title }} </span>
       <v-spacer></v-spacer>
       <a>
@@ -41,6 +46,11 @@ export default {
     window: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    activeWindow() {
+      return this.$store.state.windows.activeWindow
     }
   },
   methods: {

@@ -15,20 +15,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      activeWindow: 0
-    }
-  },
   computed: {
     windows() {
       return this.$store.state.windows.openWindows
-    }
-  },
-  methods: {
-    moveWindowToTop(id) {
-      this.activeWindow = id
-      this.$store.commit('windows/moveWindowZindexToTop', id)
+    },
+    activeWindow() {
+      return this.$store.state.windows.activeWindow
     }
   }
 }

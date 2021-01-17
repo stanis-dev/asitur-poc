@@ -49,8 +49,8 @@ export default {
     })
   },
   methods: {
-    setToTop(currentIndex) {
-      this.$emit('setToTop', this.window.id)
+    setToTop() {
+      this.$store.commit('windows/moveWindowZindexToTop', this.window.id)
     }
   }
 }
