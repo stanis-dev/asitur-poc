@@ -1,13 +1,17 @@
 <template>
   <v-text-field
     dense
-    outlined
     height="30"
+    outlined
+    flat
     hide-details
     :label="label"
     class="compact-style"
     :append-icon="icon"
     :style="{ maxWidth: `${width}%` }"
+    :readonly="readonly"
+    :value="value"
+    :disabled="disabled"
   ></v-text-field>
 </template>
 
@@ -23,6 +27,15 @@ export default {
     },
     width: {
       type: Number
+    },
+    readonly: {
+      type: Boolean
+    },
+    disabled: {
+      type: Boolean
+    },
+    value: {
+      type: String
     }
   }
 }

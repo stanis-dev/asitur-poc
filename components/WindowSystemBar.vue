@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-system-bar color="indigo darken-2" class="header">
-      <span class="white--text">{{ window.title }} | {{ window.id }}</span>
+      <span class="white--text">{{ window.title }} </span>
       <v-spacer></v-spacer>
       <a>
         <v-icon class="white--text" @click="minimizeWindow"

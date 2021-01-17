@@ -2,6 +2,7 @@
   <v-select
     dense
     outlined
+    hide-details
     light
     :items="items"
     :menu-props="{ top: true, offsetY: true }"
