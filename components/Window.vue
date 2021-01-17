@@ -2,7 +2,7 @@
   <div
     class="ui-state-active resizable"
     @mousedown="setToTop()"
-    :style="{ zIndex: zIndex }"
+    :style="{ zIndex }"
     v-show="window.state === 'max'"
   >
     <WindowSystemBar :window="window" />
@@ -40,7 +40,7 @@ export default {
       $(id)
         .resizable({
           containment: '.v-main__wrap',
-          minWidth: 900
+          minWidth: 800
         })
         .draggable({
           containment: '.v-main__wrap',
@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .ui-state-active {
-  width: 900px;
+  width: 800px;
   border: 1px solid #3f51b5;
   background: #efebde;
   color: black;
@@ -68,10 +68,6 @@ export default {
 
   &.active {
     z-index: 200 !important;
-  }
-
-  .header {
-    cursor: grabbing;
   }
 }
 </style>

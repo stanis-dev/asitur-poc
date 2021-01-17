@@ -2,10 +2,12 @@
   <v-text-field
     dense
     outlined
-    height="5"
+    height="30"
+    hide-details
     :label="label"
     class="compact-style"
     :append-icon="icon"
+    :style="{ maxWidth: `${width}%` }"
   ></v-text-field>
 </template>
 
@@ -18,6 +20,9 @@ export default {
     },
     icon: {
       type: String
+    },
+    width: {
+      type: Number
     }
   }
 }

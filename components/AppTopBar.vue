@@ -3,9 +3,21 @@
     <a>
       <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
     </a>
-    <a>
-      <v-icon class="mr-4" @click="createNewWindow">mdi-dock-window</v-icon>
-    </a>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <a>
+          <v-icon
+            v-on="on"
+            v-bind="attrs"
+            class="mr-4"
+            @click="createNewWindow"
+            color="green"
+            >mdi-dock-window</v-icon
+          >
+        </a>
+      </template>
+      <span>New Window</span>
+    </v-tooltip>
     <a>
       <v-icon class="mr-4">mdi-desk-lamp</v-icon>
     </a>

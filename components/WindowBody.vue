@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <v-subheader>Quien llama</v-subheader>
-    <v-container>
-      <v-row justify="space-between" dense>
-        <BaseTextInput :label="'NOM:'" />
+  <section class="px-4">
+    <div class="first-row">
+      <v-subheader class="subheader">Quien llama</v-subheader>
+      <v-divider class=""></v-divider>
+      <v-row justify="space-between" dense class="mt-4">
+        <BaseTextInput :label="'NOM:'" :width="25" />
         <BaseTextInput :label="'APE:'" />
-        <BaseSelect :label="'Asegurado'" />
-        <BaseTextInput :label="'Telef:'" :icon="'mdi-phone-classic'" />
-        <BaseDatePickerInput />
+        <BaseSelect :label="'Asegurado'" :width="15" />
+        <BaseTextInput
+          :label="'Telef:'"
+          :icon="'mdi-phone-classic'"
+          :width="15"
+        />
+        <BaseDatePickerInput :width="15" />
       </v-row>
-    </v-container>
-  </div>
+    </div>
+  </section>
 </template>

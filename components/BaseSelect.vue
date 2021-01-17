@@ -7,6 +7,7 @@
     :menu-props="{ top: true, offsetY: true }"
     :label="label"
     class="compact-style"
+    :style="{ maxWidth: `${width}%` }"
   ></v-select>
 </template>
 
@@ -16,6 +17,9 @@ export default {
     label: {
       type: String,
       default: 'Label'
+    },
+    width: {
+      type: Number
     }
   },
   data() {

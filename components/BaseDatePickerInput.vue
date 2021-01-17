@@ -12,24 +12,26 @@
         v-model="date"
         label="F.ocurr"
         dense
-        prepend-icon="mdi-calendar"
+        append-icon="mdi-calendar"
+        hide-details
         readonly
         outlined
         v-bind="attrs"
         v-on="on"
-        class="compact-style"
+        :style="{ maxWidth: `${width}%` }"
       ></v-text-field>
     </template>
-    <v-date-picker
-      v-model="date"
-      @input="menu2 = false"
-      class="compact-style"
-    ></v-date-picker>
+    <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
   </v-menu>
 </template>
 
 <script>
 export default {
+  props: {
+    width: {
+      type: Number
+    }
+  },
   data: () => ({
     date: new Date().toISOString().substr(0, 10),
     menu: false,
@@ -38,3 +40,9 @@ export default {
   })
 }
 </script>
+
+<style lang="scss">
+.v-input__slot {
+  height: 30px !important;
+}
+</style>
