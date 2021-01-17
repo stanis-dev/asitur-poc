@@ -1,11 +1,12 @@
 export const state = () => ({
-  openWindows: []
+  openWindows: [],
+  activeWindow: null
 })
 
 export const mutations = {
   pushNewWindow(state) {
     const newWindow = {
-      title: `Window ${state.openWindows.length}`,
+      title: `Expediente N: ${Date.now()}`,
       id: Date.now(),
       state: 'max'
     }

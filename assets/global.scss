@@ -9,3 +9,24 @@ html {
 .v-label {
   font-size: 12px !important;
 }
+
+.bordered-container {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 17px 5px 5px 5px;
+  margin: -10px 1px 0 1px !important;
+}
+
+.subheader {
+  background: #efebde;
+  display: inline-block;
+  margin-left: 15px;
+
+  &.thin {
+    height: 15px;
+  }
+}
+
+.v-menu__content {
+  z-index: 9999 !important;
+}

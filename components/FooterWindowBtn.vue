@@ -1,11 +1,11 @@
 <template>
   <v-btn
     dark
-    color="indigo"
+    color="indigo lighten-2"
     class="mr-2"
     @click="maximizeWindow(window.id)"
     v-show="window.state === 'min'"
-    >{{ window.title }}
+    >{{ title }}
     <v-icon>mdi-window-maximize</v-icon>
   </v-btn>
 </template>
@@ -16,6 +16,13 @@ export default {
     window: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    title() {
+      return this.window.title.length >= 10
+        ? `${this.window.title.substr(0, 7)}...`
+        : this.window.title
     }
   },
   methods: {
