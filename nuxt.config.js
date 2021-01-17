@@ -27,7 +27,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/jquery-ui.css', '@/assets/global.css'],
+  css: ['@/assets/jquery-ui.css', '@/assets/global.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -54,7 +54,8 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    customVariables: ['~/assets/variables.scss']
+    customVariables: ['~/assets/variables.scss'],
+    treeShake: true
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
