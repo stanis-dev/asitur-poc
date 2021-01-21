@@ -1,18 +1,19 @@
 <template>
-  <v-text-field
-    dense
-    height="30"
-    outlined
-    flat
-    hide-details
-    :label="label"
-    class="compact-style"
-    :append-icon="icon"
-    :style="{ maxWidth: `${width}%` }"
-    :readonly="readonly"
-    :value="value"
-    :disabled="disabled"
-  ></v-text-field>
+  <div>
+    <label :label="label">{{label}}
+      <input 
+      type="text" 
+      class="compact-style"
+      :readonly="readonly"
+      :value="value"
+      :disable="disabled"
+      style="height:20px"
+      :style="{ maxWidth: `${width}%` }"
+      >
+    </label>
+ 
+  </div>
+
 </template>
 
 <script>
@@ -40,3 +41,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+input[type="text"],input[type="text"]:focus {
+  background-color:#fff;
+  border-style:double;
+  margin-right: 2px;
+}
+</style>

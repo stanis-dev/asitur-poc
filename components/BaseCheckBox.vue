@@ -1,41 +1,21 @@
 <template>
-  <v-checkbox dense hide-details class="base-checkbox pl-2">
-    <template v-slot:label>
-      <div>Parte de siniestro</div>
-    </template>
-  </v-checkbox>
+
+  <div>
+    <label :class="{'bg-red' : checked}" for="checkbox" slot="label">Parte de siniestro</label>
+    <input v-model="checked" type="checkbox">
+  </div>
 </template>
-
-<style lang="scss">
-.v-input--selection-controls {
-  margin-top: 0 !important;
+<script>
+export default {
+  data() {
+    return {
+      checked:null
+    }
+  }
 }
-.base-checkbox {
-  &.v-input--is-label-active {
-    .v-input__control {
-      .v-input__slot {
-        label {
-          background: #ef5350;
-          border-radius: 4px;
-        }
-      }
-    }
-  }
-
-  .v-input__control {
-    .v-input__slot {
-      flex-direction: row-reverse !important;
-      margin-top: -4px;
-
-      label {
-        height: 80%;
-        padding: 0 2px;
-      }
-
-      .v-input--selection-controls__input {
-        margin-right: 0;
-      }
-    }
-  }
+</script>
+<style lang="scss">
+.bg-red {
+  background-color:red;
 }
 </style>
