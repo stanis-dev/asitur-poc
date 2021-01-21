@@ -1,30 +1,11 @@
 <template>
-  <v-menu
-    v-model="menu2"
-    :close-on-content-click="false"
-    :nudge-right="40"
-    transition="scale-transition"
-    offset-y
-    min-width="auto"
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-text-field
-        v-model="date"
-        label="F.ocurr"
-        dense
-        append-icon="mdi-calendar"
-        hide-details
-        readonly
-        outlined
-        v-bind="attrs"
-        v-on="on"
-        :style="{ maxWidth: `${width}%` }"
-      ></v-text-field>
-    </template>
-    <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
-  </v-menu>
+  <div>
+    <label for="start">F. ocurr</label>
+    <input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2031-12-31">
+  </div>
 </template>
-
 <script>
 export default {
   props: {
