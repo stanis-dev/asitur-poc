@@ -1,15 +1,15 @@
 <template>
-  <v-select
-    dense
-    outlined
-    hide-details
-    light
-    :items="items"
+  <div>
+    <label>{{label}}</label>
+    <select
     :menu-props="{ top: true, offsetY: true }"
-    :label="label"
     class="compact-style"
     :style="{ maxWidth: `${width}%` }"
-  ></v-select>
+    >
+    <option v-for="item in items" :key="item">{{item}}</option>
+  </select>
+  </div>
+
 </template>
 
 <script>
@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+select {
+  border-style: double;
+  -webkit-appearance: searchfield;
+  background-color:#fff;
+}
+</style>

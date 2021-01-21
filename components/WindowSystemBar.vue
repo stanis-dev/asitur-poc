@@ -1,42 +1,40 @@
 <template>
   <div>
-    <v-system-bar
-      :color="
-        activeWindow === window.id ? 'indigo darken-2' : 'indigo lighten-2'
-      "
+    <div
       class="header"
     >
-      <span class="white--text">{{ window.title }} </span>
-      <v-spacer></v-spacer>
-      <a>
-        <v-icon class="white--text" @click="minimizeWindow"
-          >mdi-window-minimize</v-icon
+    <ul :class="{activeColor : activeWindow === window.id, inactiveColor : activeWindow!= window.id}">
+      <li><span class="text-white">{{ window.title }} </span></li>
+      <li><a>
+        <i class="text-white mdi mdi-window-minimize" @click="minimizeWindow"
+          ></i
         >
       </a>
       <a>
-        <v-icon class="white--text" @click="closeThisWindow">mdi-close</v-icon>
-      </a>
-    </v-system-bar>
-    <v-system-bar color="#efebde" dense>
+        <i class="text-white mdi mdi-close" @click="closeThisWindow"></i>
+      </a></li>
+    </ul>
+    </div>
+<div>
       <a>
-        <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
-      </a>
-      <a>
-        <v-icon class="mr-4">mdi-dock-window</v-icon>
+        <i class="mdi mdi-content-save-all-outline"></i>
       </a>
       <a>
-        <v-icon class="mr-4">mdi-desk-lamp</v-icon>
+        <i class="mdi mdi-dock-window"></i>
       </a>
       <a>
-        <v-icon class="mr-4">mdi-clipboard-text-search-outline</v-icon>
+        <i class="mdi mdi-desk-lamp"></i>
       </a>
       <a>
-        <v-icon class="mr-4">mdi-folder-search-outline</v-icon>
+        <i class="mdi mdi-clipboard-text-search-outline"></i>
       </a>
       <a>
-        <v-icon class="mr-4">mdi-email-search-outline</v-icon>
+        <i class="mdi mdi-folder-search-outline"></i>
       </a>
-    </v-system-bar>
+      <a>
+        <i class="mdi mdi-email-search-outline"></i>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -65,9 +63,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-system-bar {
-  &.header {
-    cursor: grabbing;
+a{
+  color:grey;
+  margin-right: 16px;
+  font-size:16px;
+}
+ul {
+  cursor: grabbing;
+  display: flex;
+  justify-content: space-between;
+  li {
+    display:inline-block;
   }
+}
+.activeColor{
+background-color: #303f9f;
+}
+.inactiveColor{
+background-color: #7986cb;
+}
+.text-white {
+  color:white;
 }
 </style>

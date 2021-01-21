@@ -2,51 +2,67 @@
   <section>
     <div class="form-row">
       <div class="subheader">
-        <v-subheader>Quien llama</v-subheader>
+        <header>Quien llama</header>
       </div>
-      <v-row dense class="bordered-container">
-        <BaseTextInput :label="'NOM:'" :width="25" />
-        <BaseTextInput :label="'APE:'" />
-        <BaseSelect :label="'Asegurado'" :width="15" />
+      <div class="flex-container bordered-container">
+        <BaseTextInput :label="'Nom:'" :width="90" />
+        <BaseTextInput :label="'Ape:'" />
+        <BaseSelect :label="'Asegurado:'" :width="90" />
         <BaseTextInput
           :label="'Telef:'"
-          :icon="'mdi-phone-classic'"
-          :width="15"
+          :icon="'mdi mdi-phone-classic'"
+          :width="90"
         />
+        <i class="mdi mdi-phone-classic"></i>
         <BaseDatePickerInput :width="15" />
-      </v-row>
+      </div>
 
-      <v-row>
-        <v-col cols="6" class="left-side-row pt-0">
+      <div class="space-between">
+        <div class="flex-grow" >
           <div class="subheader thin">
-            <v-subheader>Características</v-subheader>
+            <header>Características</header>
           </div>
 
-          <v-row class="bordered-container">
+          <div class="bordered-container">
             <BaseTextInput
-              :label="'Apertura'"
+              :label="'Apertura:'"
+              :width="90"
               :value="'07/01/2021 14:59 por [DES] formación'"
             />
             <BaseCheckBox />
 
             <BaseTextInput
-              :label="'Daño'"
+              :label="'Daño:'"
               :value="'Extensión de garantías'"
               :disabled="true"
-              class="mt-2"
             />
-          </v-row>
-        </v-col>
-        <v-col cols="6" class="right-side-row">
+          </div>
+        </div>
+        <div class="flex-grow m4">
           <BaseTextInput
             :label="'Asignado a:'"
             :disabled="true"
             :value="'[DES] SINIESTRO T. GLOBAL'"
           />
-        </v-col>
-      </v-row>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flex-container {
+  display:flex;
+  justify-content: flex-start;
+}
+.space-between {
+  display:flex;
+  justify-content: space-between;
+}
+.flex-grow {
+  flex-grow:4;
+}
+.m4 {
+  margin:4px;
+}
+</style>
