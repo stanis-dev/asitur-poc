@@ -8,7 +8,7 @@
       :value="value"
       :disable="disabled"
       style="height:20px"
-      :style="{ maxWidth: `${width}%` }"
+      :style="{ maxWidth: `${width}px` }"
       >
     </label>
  

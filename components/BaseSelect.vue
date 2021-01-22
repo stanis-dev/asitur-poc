@@ -4,7 +4,7 @@
     <select
     :menu-props="{ top: true, offsetY: true }"
     class="compact-style"
-    :style="{ maxWidth: `${width}%` }"
+    :style="{ maxWidth: `${width}px` }"
     >
     <option v-for="item in items" :key="item">{{item}}</option>
   </select>
@@ -35,5 +35,8 @@ select {
   border-style: double;
   -webkit-appearance: searchfield;
   background-color:#fff;
+}
+label{
+  font-size: 14px;
 }
 </style>
