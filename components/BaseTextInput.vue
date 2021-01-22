@@ -6,7 +6,7 @@
       class="compact-style"
       :readonly="readonly"
       :value="value"
-      :disable="disabled"
+      :disabled="disabled"
       style="height:20px"
       :style="{ maxWidth: `${width}%` }"
       >

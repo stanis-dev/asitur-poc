@@ -17,8 +17,7 @@
 export default {
   props: {
     label: {
-      type: String,
-      default: 'Label'
+      type: String
     },
     width: {
       type: Number
