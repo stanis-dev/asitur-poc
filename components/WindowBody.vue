@@ -80,6 +80,36 @@
           </div>
         </div>
       </div>
+      <div class="flex">
+        <div class="flex flex-space-between">
+          <div>
+            <div class="subheader">
+              <header>Póliza</header>
+            </div>
+            <div class="bordered-container">
+              <div class="flex">
+                <BaseTextInput
+                  :label="'Entidad'"
+                  :disabled="'Disabled'"
+                  />
+                  <BaseTextInput
+                  :label="'Nºpól'"
+                  :disabled="'Disabled'"
+                  />
+              </div>
+              <div class="flex">
+                <BaseTextInput
+                :label="'Producto'"
+                :disabled="'Disabled'"
+                :width=250
+                />
+              <input type="button" value="Maestra">
+              <input type="button" value="Copia"> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -113,4 +143,10 @@ label {
   width:120px;
   background-color:transparent;
 }
+input[type="button"]{
+  font-size: 14px;
+  border-style: outset;
+  width: 80px;
+  
+  }
 </style>
