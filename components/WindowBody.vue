@@ -4,17 +4,10 @@
       <div class="subheader">
         <header>Quien llama</header>
       </div>
-<<<<<<< HEAD
-      <div class="space-between bordered-container">
+      <div class="flex flex-space-between bordered-container">
         <BaseTextInput :label="'Nom:'" :width="95" />
         <BaseTextInput :label="'Ape:'" :width="95" />
         <BaseSelect :label="'Asegurado:'" :width="95" />
-=======
-      <div class="flex flex-space-between bordered-container">
-        <BaseTextInput :label="'Nom:'" :width="90" />
-        <BaseTextInput :label="'Ape:'" />
-        <BaseSelect :label="'Asegurado:'" :width="90" />
->>>>>>> aparras
         <BaseTextInput
           :label="'Telef:'"
           :icon="'mdi mdi-phone-classic'"
@@ -25,11 +18,10 @@
       </div>
 
       <div class="flex">
-        <div class="" >
+        <div>
           <div class="subheader thin">
             <header>Características</header>
           </div>
-
           <div class="bordered-container">
             <div class="flex flex-start">
               <BaseTextInput
@@ -62,19 +54,40 @@
           />
         </div>
       </div>
+      <div class="flex flex-space-between">
+        <div>
+          <div class="subheader">
+            <header>Póliza</header>
+          </div>
+          <div class="bordered-container">
+          <div class="flex">
+            <BaseTextInput
+            :label="'Entidad'"
+            :disabled="'Disabled'"
+            />
+            <BaseTextInput
+            :label="'Nºpól'"
+            :disabled="'Disabled'"
+            />
+          </div>
+          <div class="flex">
+            <BaseTextInput
+            :label="'Producto'"
+            :disabled="'Disabled'"
+            :width=250
+            />
+            <input type="button" value="Maestra">
+            <input type="button" value="Copia"> 
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
-.flex-container {
-  display:flex; 
-}
-.space-between {
-=======
 .flex {
->>>>>>> aparras
   display:flex;
   &-around {
     justify-content: space-around;
@@ -95,4 +108,10 @@
 label {
   background-color:darkgrey;
 }
+input[type="button"]{
+  font-size: 14px;
+  border-style: outset;
+  width: 80px;
+  
+  }
 </style>
