@@ -18,6 +18,10 @@
       </div>
 
       <div class="flex">
+<<<<<<< HEAD
+=======
+         <!-- CARACTERISTICAS -->
+>>>>>>> aparras
         <div>
           <div class="subheader thin">
             <header>Características</header>
@@ -46,6 +50,7 @@
             </div>
           </div>
         </div>
+        <!-- ASIGNADO A -->
         <div class="m4">
           <BaseTextInput
             :label="'Asignado a:'"
@@ -54,6 +59,7 @@
           />
         </div>
       </div>
+<<<<<<< HEAD
       <div class="flex flex-space-between">
         <div>
           <div class="subheader">
@@ -79,6 +85,29 @@
             <input type="button" value="Maestra">
             <input type="button" value="Copia"> 
           </div>
+=======
+      <div class="flex">
+        <!-- ESTADO -->
+        <div>
+          <div class="subheader thin">
+            <header>Estado</header>
+          </div>
+          <div class="bordered-container">
+            <div>
+              <div class="flex flex-start">
+                <BaseRadio :name="'estado'" :label="'Abierto'" class="asd" />
+                <label class="asd">Estado:</label>
+                <BaseRadio :name="'estado'" :label="'Cerrado'" class="asd" />
+                <label class="asd">F.Termin</label>
+              </div>
+              <div class="flex flex-start">
+                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseSelect class="asd" />
+                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseTextInput class="asd" :width="90" :disabled="true"/>
+              </div>
+            </div>
+>>>>>>> aparras
           </div>
         </div>
       </div>
@@ -101,6 +130,9 @@
   &-start {
     justify-content: flex-start;
   }
+  &-column {
+    flex-direction: column;
+  }
 }
 .m4 {
   margin:4px;
@@ -108,10 +140,17 @@
 label {
   background-color:darkgrey;
 }
+<<<<<<< HEAD
 input[type="button"]{
   font-size: 14px;
   border-style: outset;
   width: 80px;
   
   }
+=======
+.asd {
+  width:120px;
+  background-color:transparent;
+}
+>>>>>>> aparras
 </style>
