@@ -35,12 +35,8 @@ export default {
 }
 </script>
 <style lang="scss">
-select {
-  border-style: double;
-  -webkit-appearance: searchfield;
-  background-color:#fff;
-}
 label{
   font-size: 14px;
+  
 }
 </style>

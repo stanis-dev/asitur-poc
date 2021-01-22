@@ -7,11 +7,11 @@
       <div class="space-between bordered-container">
         <BaseTextInput :label="'Nom:'" :width="95" />
         <BaseTextInput :label="'Ape:'" :width="95" />
-        <BaseSelect :label="'Asegurado:'" :width="85" />
+        <BaseSelect :label="'Asegurado:'" :width="95" />
         <BaseTextInput
           :label="'Telef:'"
           :icon="'mdi mdi-phone-classic'"
-          :width="75"
+          :width="85"
         />
         <i class="mdi mdi-phone-classic"></i>
         <BaseDatePickerInput :width="350" />
