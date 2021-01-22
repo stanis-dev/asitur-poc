@@ -5,16 +5,16 @@
         <header>Quien llama</header>
       </div>
       <div class="flex flex-space-between bordered-container">
-        <BaseTextInput :label="'Nom:'" :width="90" />
-        <BaseTextInput :label="'Ape:'" />
-        <BaseSelect :label="'Asegurado:'" :width="90" />
+        <BaseTextInput :label="'Nom:'" :width="95" />
+        <BaseTextInput :label="'Ape:'" :width="95" />
+        <BaseSelect :label="'Asegurado:'" :width="95" />
         <BaseTextInput
           :label="'Telef:'"
           :icon="'mdi mdi-phone-classic'"
-          :width="90"
+          :width="85"
         />
         <i class="mdi mdi-phone-classic"></i>
-        <BaseDatePickerInput :width="15" />
+        <BaseDatePickerInput :width="350" />
       </div>
 
       <div class="flex">

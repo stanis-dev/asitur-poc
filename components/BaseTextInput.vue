@@ -8,7 +8,7 @@
       :value="value"
       :disabled="disabled"
       style="height:20px"
-      :style="{ maxWidth: `${width}%` }"
+      :style="{ maxWidth: `${width}px` }"
       >
     </label>
  
@@ -42,9 +42,5 @@ export default {
 }
 </script>
 <style lang="scss">
-input[type="text"],input[type="text"]:focus {
-  background-color:#fff;
-  border-style:double;
-  margin-right: 2px;
-}
+
 </style>

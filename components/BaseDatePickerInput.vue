@@ -1,9 +1,13 @@
 <template>
   <div>
     <label for="start">F. ocurr</label>
-    <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2031-12-31">
+    <input type="date"   
+      class="compact-style"
+      value="2018-07-22"
+      min="2018-01-01"
+      max="2031-12-31"
+      :style="{ maxWidth: `${width}px` }"
+      >
   </div>
 </template>
 <script>
@@ -23,7 +27,5 @@ export default {
 </script>
 
 <style lang="scss">
-.v-input__slot {
-  height: 30px !important;
-}
+
 </style>
