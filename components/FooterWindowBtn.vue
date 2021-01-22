@@ -3,7 +3,7 @@
     @click="maximizeWindow(window.id)"
     v-show="window.state === 'min'"
     >{{ title }}
-    <icon class="mdi mdi-window-maximize"></icon>
+    <i class="mdi mdi-window-maximize"></i>
   </button>
 </template>
 
