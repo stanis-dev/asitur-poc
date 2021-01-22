@@ -4,12 +4,8 @@
     <select
     :menu-props="{ top: true, offsetY: true }"
     class="compact-style"
-<<<<<<< HEAD
     :style="{ maxWidth: `${width}px` }"
-=======
-    :style="{ maxWidth: `${width}%` }"
     :disabled="disabled"
->>>>>>> aparras
     >
     <option v-for="item in items" :key="item">{{item}}</option>
   </select>
