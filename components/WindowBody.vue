@@ -18,11 +18,11 @@
       </div>
 
       <div class="flex">
-        <div class="" >
+         <!-- CARACTERISTICAS -->
+        <div>
           <div class="subheader thin">
             <header>Características</header>
           </div>
-
           <div class="bordered-container">
             <div class="flex flex-start">
               <BaseTextInput
@@ -47,12 +47,37 @@
             </div>
           </div>
         </div>
+        <!-- ASIGNADO A -->
         <div class="m4">
           <BaseTextInput
             :label="'Asignado a:'"
             :disabled="true"
             :value="'[DES] SINIESTRO T. GLOBAL'"
           />
+        </div>
+      </div>
+      <div class="flex">
+        <!-- ESTADO -->
+        <div>
+          <div class="subheader thin">
+            <header>Estado</header>
+          </div>
+          <div class="bordered-container">
+            <div>
+              <div class="flex flex-start">
+                <BaseRadio :name="'estado'" :label="'Abierto'" class="asd" />
+                <label class="asd">Estado:</label>
+                <BaseRadio :name="'estado'" :label="'Cerrado'" class="asd" />
+                <label class="asd">F.Termin</label>
+              </div>
+              <div class="flex flex-start">
+                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseSelect class="asd" />
+                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseTextInput class="asd" :width="90" :disabled="true"/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,11 +99,18 @@
   &-start {
     justify-content: flex-start;
   }
+  &-column {
+    flex-direction: column;
+  }
 }
 .m4 {
   margin:4px;
 }
 label {
   background-color:darkgrey;
+}
+.asd {
+  width:120px;
+  background-color:transparent;
 }
 </style>

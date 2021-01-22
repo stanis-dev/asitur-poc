@@ -1,13 +1,12 @@
 <template>
   <div>
-    <label :label="label">{{label}}
+    <label>{{label}}
       <input 
       type="text" 
       class="compact-style"
       :readonly="readonly"
       :value="value"
       :disabled="disabled"
-      style="height:20px"
       :style="{ maxWidth: `${width}px` }"
       >
     </label>
@@ -21,7 +20,6 @@ export default {
   props: {
     label: {
       type: String,
-      default: 'Label'
     },
     icon: {
       type: String
@@ -42,5 +40,4 @@ export default {
 }
 </script>
 <style lang="scss">
-
 </style>
