@@ -5,6 +5,7 @@
     :menu-props="{ top: true, offsetY: true }"
     class="compact-style"
     :style="{ maxWidth: `${width}%` }"
+    :disabled="disabled"
     >
     <option v-for="item in items" :key="item">{{item}}</option>
   </select>
@@ -21,7 +22,10 @@ export default {
     },
     width: {
       type: Number
-    }
+    },
+    disabled: {
+      type: Boolean
+    },
   },
   data() {
     return {
