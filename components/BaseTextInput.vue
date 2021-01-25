@@ -1,26 +1,25 @@
 <template>
-  <v-text-field
-    dense
-    height="30"
-    outlined
-    flat
-    hide-details
-    :label="label"
-    class="compact-style"
-    :append-icon="icon"
-    :style="{ maxWidth: `${width}%` }"
-    :readonly="readonly"
-    :value="value"
-    :disabled="disabled"
-  ></v-text-field>
+  <div>
+    <label>{{label}}
+      <input 
+      type="text" 
+      class="compact-style"
+      :readonly="readonly"
+      :value="value"
+      :disabled="disabled"
+      :style="{ maxWidth: `${width}px` }"
+      >
+    </label>
+ 
+  </div>
+
 </template>
 
 <script>
 export default {
   props: {
     label: {
-      type: String,
-      default: 'Label'
+      type: String
     },
     icon: {
       type: String
@@ -40,3 +39,5 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+</style>

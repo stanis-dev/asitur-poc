@@ -1,32 +1,41 @@
 <template>
-  <v-select
-    dense
-    outlined
-    hide-details
-    light
-    :items="items"
+  <div>
+    <label>{{label}}</label>
+    <select
     :menu-props="{ top: true, offsetY: true }"
-    :label="label"
     class="compact-style"
-    :style="{ maxWidth: `${width}%` }"
-  ></v-select>
+    :style="{ maxWidth: `${width}px` }"
+    :disabled="disabled"
+    >
+    <option v-for="item in items" :key="item">{{item}}</option>
+  </select>
+  </div>
+
 </template>
 
 <script>
 export default {
   props: {
     label: {
-      type: String,
-      default: 'Label'
+      type: String
     },
     width: {
       type: Number
-    }
+    },
+    disabled: {
+      type: Boolean
+    },
   },
   data() {
     return {
-      items: ['item1', 'item2', 'item3']
+      items: ['item1extralonger', 'item2', 'item3']
     }
   }
 }
 </script>
+<style lang="scss">
+label{
+  font-size: 14px;
+  
+}
+</style>

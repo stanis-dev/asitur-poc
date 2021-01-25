@@ -38,10 +38,6 @@ export default {
     const id = '#' + this.$props.window.id
     $(function () {
       $(id)
-        .resizable({
-          containment: '.v-main__wrap',
-          minWidth: 800
-        })
         .draggable({
           containment: '.v-main__wrap',
           handle: '.header'

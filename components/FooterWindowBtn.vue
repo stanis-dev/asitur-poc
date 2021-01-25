@@ -1,13 +1,10 @@
 <template>
-  <v-btn
-    dark
-    color="indigo lighten-2"
-    class="mr-2"
+  <button
     @click="maximizeWindow(window.id)"
     v-show="window.state === 'min'"
     >{{ title }}
-    <v-icon>mdi-window-maximize</v-icon>
-  </v-btn>
+    <i class="mdi mdi-window-maximize"></i>
+  </button>
 </template>
 
 <script>
@@ -32,3 +29,10 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+button{
+  background-color:#7986CB;
+  border: solid 1px;
+  margin-right: 4px;
+}
+</style>

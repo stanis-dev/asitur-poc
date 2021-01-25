@@ -2,51 +2,180 @@
   <section>
     <div class="form-row">
       <div class="subheader">
-        <v-subheader>Quien llama</v-subheader>
+        <header>Quien llama</header>
       </div>
-      <v-row dense class="bordered-container">
-        <BaseTextInput :label="'NOM:'" :width="25" />
-        <BaseTextInput :label="'APE:'" />
-        <BaseSelect :label="'Asegurado'" :width="15" />
+      <div class="flex flex-space-between bordered-container">
+        <BaseTextInput :label="'Nom:'" :width="95" />
+        <BaseTextInput :label="'Ape:'" :width="95" />
+        <BaseSelect :label="'Asegurado:'" :width="95" />
         <BaseTextInput
           :label="'Telef:'"
-          :icon="'mdi-phone-classic'"
-          :width="15"
+          :icon="'mdi mdi-phone-classic'"
+          :width="85"
         />
-        <BaseDatePickerInput :width="15" />
-      </v-row>
+        <i class="mdi mdi-phone-classic"></i>
+        <BaseDatePickerInput :width="350" />
+      </div>
 
-      <v-row>
-        <v-col cols="6" class="left-side-row pt-0">
+      <div class="flex flex-space-between">
+         <!-- CARACTERISTICAS -->
+        <div>
           <div class="subheader thin">
-            <v-subheader>Características</v-subheader>
+            <header>Características</header>
           </div>
-
-          <v-row class="bordered-container">
-            <BaseTextInput
-              :label="'Apertura'"
+          <div class="bordered-container">
+            <div class="flex flex-start">
+              <BaseTextInput
+              :label="'Apertura:'"
+              :width="300"
               :value="'07/01/2021 14:59 por [DES] formación'"
-            />
-            <BaseCheckBox />
+              />
+              <BaseCheckBox :label="'Parte del siniestro'"/>
+              </div>
+            <div class="flex flex-start">
+              <BaseSelect :label="'Daño: '" :width="90" :disabled="true"/>
+              <BaseSelect :label="'Causa: '" :width="90"/>
+            </div>
+            <div class="flex flex-space-between">
+              <BaseSelect :label="'Tipo: '" :width="90"/>
+              <BaseDesplegable :header1="'C.Coberturas'" :header2="'ClubMSG'" />
+            </div>
 
-            <BaseTextInput
-              :label="'Daño'"
-              :value="'Extensión de garantías'"
-              :disabled="true"
-              class="mt-2"
-            />
-          </v-row>
-        </v-col>
-        <v-col cols="6" class="right-side-row">
+            <label>¿Cubierto?</label>
+            <BaseSelect :width="90"/>
+            <div class="flex flex-start">
+              <BaseCheckBox :label="'Recobrable'" :disabled="true" />
+              <BaseCheckBox :label="'Urgente'"/>
+              <BaseCheckBox :label="'No Asitur'"/>
+              <BaseCheckBox :label="'Peritaje'"/>
+            </div>
+          </div>
+        </div>
+        <!-- ASIGNADO A -->
+        <div>
           <BaseTextInput
             :label="'Asignado a:'"
             :disabled="true"
             :value="'[DES] SINIESTRO T. GLOBAL'"
           />
-        </v-col>
-      </v-row>
+          <div class="flex">
+            <div>
+              <div class="subheader thin">
+                <header>Descripcion del siniestro</header>
+              </div>
+              <div class="bordered-container">
+                <BaseTextArea  :rows="4" :cols="50" :width="435" :text="'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <!-- ESTADO -->
+        <div>
+          <div class="subheader thin">
+            <header>Estado</header>
+          </div>
+          <div class="bordered-container">
+            <div>
+              <div class="flex flex-start">
+                <BaseRadio :name="'estado'" :label="'Abierto'" class="label-estado" />
+                <label class="label-estado">Estado:</label>
+                <BaseRadio :name="'estado'" :label="'Cerrado'" class="label-estado" />
+                <label class="label-estado">F.Termin</label>
+              </div>
+              <div class="flex flex-start">
+                <BaseTextInput class="label-estado" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseSelect :width="80" class="label-estado" />
+                <BaseTextInput class="label-estado" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseTextInput class="label-estado" :width="90" :disabled="true"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-space-between">
+        <!--POLIZA-->
+        <div>
+          <div class="subheader">
+            <header>Póliza</header>
+          </div>
+          <div class="bordered-container">
+            <div class="flex">
+              <BaseTextInput
+              :label="'Entidad'"
+              :disabled="true"
+              />
+              <BaseTextInput
+              :label="'Nºpól'"
+              :disabled="true"
+              />
+            </div>
+            <div class="flex">
+              <BaseTextInput
+              :label="'Producto'"
+              :disabled="true"
+              :width=250
+              />
+              <BaseInputButton type="button" class="button" :value="'Maestra'" :width="80"/>
+              <BaseInputButton type="button" class="button" :value="'Copia'" :width="80"/> 
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="subheader">
+            <header>Observaciones</header>
+          </div>
+          <div class="bordered-container">
+            <div class="flex">
+              <BaseTextArea :rows="4" :cols="50" :text="'Esto es una prueba'" :width="395" :height="44"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <div>
+          <div class="subheader thin">
+            <header>Satisfacción</header>
+          </div>
+          <div class="bordered-container">
+            <div>
+              <BaseSelect />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flex {
+  display:flex;
+  &-around {
+    justify-content: space-around;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-grow {
+    flex-grow:4;
+  }
+  &-start {
+    justify-content: flex-start;
+  }
+  &-column {
+    flex-direction: column;
+  }
+}
+.m4 {
+  margin:4px;
+}
+label {
+  background-color:darkgrey;
+}
+.label-estado {
+  width:120px;
+  background-color:transparent;
+}
+</style>
