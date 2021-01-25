@@ -27,7 +27,7 @@
             <div class="flex flex-start">
               <BaseTextInput
               :label="'Apertura:'"
-              :width="90"
+              :width="300"
               :value="'07/01/2021 14:59 por [DES] formación'"
               />
               <BaseCheckBox :label="'Parte del siniestro'"/>
@@ -36,7 +36,11 @@
               <BaseSelect :label="'Daño: '" :width="90" :disabled="true"/>
               <BaseSelect :label="'Causa: '" :width="90"/>
             </div>
-            <BaseSelect :label="'Tipo: '" :width="90"/>
+            <div class="flex flex-space-between">
+              <BaseSelect :label="'Tipo: '" :width="90"/>
+              <BaseDesplegable :header1="'C.Coberturas'" :header2="'ClubMSG'" />
+            </div>
+
             <label>¿Cubierto?</label>
             <BaseSelect :width="90"/>
             <div class="flex flex-start">
@@ -47,8 +51,8 @@
             </div>
           </div>
         </div>
-        <!-- ASIGNADO A -->
         <div class="m4">
+        <!-- ASIGNADO A -->
           <BaseTextInput
             :label="'Asignado a:'"
             :disabled="true"
@@ -65,16 +69,16 @@
           <div class="bordered-container">
             <div>
               <div class="flex flex-start">
-                <BaseRadio :name="'estado'" :label="'Abierto'" class="asd" />
-                <label class="asd">Estado:</label>
-                <BaseRadio :name="'estado'" :label="'Cerrado'" class="asd" />
-                <label class="asd">F.Termin</label>
+                <BaseRadio :name="'estado'" :label="'Abierto'" class="label-estado" />
+                <label class="label-estado">Estado:</label>
+                <BaseRadio :name="'estado'" :label="'Cerrado'" class="label-estado" />
+                <label class="label-estado">F.Termin</label>
               </div>
               <div class="flex flex-start">
-                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
-                <BaseSelect class="asd" />
-                <BaseTextInput class="asd" :value="'07/01/2021'" :width="90" :disabled="true"/>
-                <BaseTextInput class="asd" :width="90" :disabled="true"/>
+                <BaseTextInput class="label-estado" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseSelect :width="80" class="label-estado" />
+                <BaseTextInput class="label-estado" :value="'07/01/2021'" :width="90" :disabled="true"/>
+                <BaseTextInput class="label-estado" :width="90" :disabled="true"/>
               </div>
             </div>
           </div>
@@ -90,23 +94,34 @@
               <div class="flex">
                 <BaseTextInput
                   :label="'Entidad'"
-                  :disabled="'Disabled'"
+                  :disabled="true"
                   />
                   <BaseTextInput
                   :label="'Nºpól'"
-                  :disabled="'Disabled'"
+                  :disabled="true"
                   />
               </div>
               <div class="flex">
                 <BaseTextInput
                 :label="'Producto'"
-                :disabled="'Disabled'"
+                :disabled="true"
                 :width=250
                 />
               <input type="button" value="Maestra">
               <input type="button" value="Copia"> 
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <!-- SATISFACCIÓN -->
+        <div>
+          <div class="subheader thin">
+            <header>Satisfacción</header>
+          </div>
+          <div class="bordered-container">
+            <BaseSelect />
           </div>
         </div>
       </div>
@@ -139,7 +154,7 @@
 label {
   background-color:darkgrey;
 }
-.asd {
+.label-estado {
   width:120px;
   background-color:transparent;
 }
@@ -148,5 +163,5 @@ input[type="button"]{
   border-style: outset;
   width: 80px;
   
-  }
+}
 </style>

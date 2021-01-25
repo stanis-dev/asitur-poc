@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      items: ['item1', 'item2', 'item3']
+      items: ['item1extralonger', 'item2', 'item3']
     }
   }
 }
