@@ -128,7 +128,19 @@
           </div>
           <div class="bordered-container">
             <div class="flex">
-              <BaseTextArea :rows="4" :cols="50" :text="'Esto es una prueba'" :width="395"/>
+              <BaseTextArea :rows="4" :cols="50" :text="'Esto es una prueba'" :width="395" :height="44"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <div>
+          <div class="subheader thin">
+            <header>Satisfacción</header>
+          </div>
+          <div class="bordered-container">
+            <div>
+              <BaseSelect />
             </div>
           </div>
         </div>

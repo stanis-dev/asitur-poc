@@ -1,6 +1,6 @@
 <template>
     <div>
-        <textarea  rows="4" cols="50" v-model="text" :style="{ width: `${width}px` }"></textarea>
+        <textarea  rows="4" cols="50" v-model="text" :style="{ width: `${width}px`, height :  `${height}px` }"></textarea>
     </div>
 </template>
 
@@ -18,6 +18,9 @@
             },
             width:{
                 type: Number
+            },
+            height:{
+                type: Number
             }
         }
     }
@@ -29,6 +32,5 @@ textarea{
   background-color: white;
   border: inset;
   overflow: auto;
-  width: 390px;
 }
 </style>
