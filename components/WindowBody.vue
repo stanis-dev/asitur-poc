@@ -17,7 +17,7 @@
         <BaseDatePickerInput :width="350" />
       </div>
 
-      <div class="flex">
+      <div class="flex flex-space-between">
          <!-- CARACTERISTICAS -->
         <div>
           <div class="subheader thin">
@@ -51,13 +51,23 @@
             </div>
           </div>
         </div>
-        <div class="m4">
         <!-- ASIGNADO A -->
+        <div>
           <BaseTextInput
             :label="'Asignado a:'"
             :disabled="true"
             :value="'[DES] SINIESTRO T. GLOBAL'"
           />
+          <div class="flex">
+            <div>
+              <div class="subheader thin">
+                <header>Descripcion del siniestro</header>
+              </div>
+              <div class="bordered-container">
+                <BaseTextArea  :rows="4" :cols="50" :width="435" :text="'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'"/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex">
@@ -84,44 +94,42 @@
           </div>
         </div>
       </div>
-      <div class="flex">
-        <div class="flex flex-space-between">
-          <div>
-            <div class="subheader">
-              <header>Póliza</header>
+      <div class="flex flex-space-between">
+        <!--POLIZA-->
+        <div>
+          <div class="subheader">
+            <header>Póliza</header>
+          </div>
+          <div class="bordered-container">
+            <div class="flex">
+              <BaseTextInput
+              :label="'Entidad'"
+              :disabled="true"
+              />
+              <BaseTextInput
+              :label="'Nºpól'"
+              :disabled="true"
+              />
             </div>
-            <div class="bordered-container">
-              <div class="flex">
-                <BaseTextInput
-                  :label="'Entidad'"
-                  :disabled="true"
-                  />
-                  <BaseTextInput
-                  :label="'Nºpól'"
-                  :disabled="true"
-                  />
-              </div>
-              <div class="flex">
-                <BaseTextInput
-                :label="'Producto'"
-                :disabled="true"
-                :width=250
-                />
-              <input type="button" value="Maestra">
-              <input type="button" value="Copia"> 
-              </div>
+            <div class="flex">
+              <BaseTextInput
+              :label="'Producto'"
+              :disabled="true"
+              :width=250
+              />
+              <BaseInputButton type="button" class="button" :value="'Maestra'" :width="80"/>
+              <BaseInputButton type="button" class="button" :value="'Copia'" :width="80"/> 
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex">
-        <!-- SATISFACCIÓN -->
         <div>
-          <div class="subheader thin">
-            <header>Satisfacción</header>
+          <div class="subheader">
+            <header>Observaciones</header>
           </div>
           <div class="bordered-container">
-            <BaseSelect />
+            <div class="flex">
+              <BaseTextArea :rows="4" :cols="50" :text="'Esto es una prueba'" :width="395"/>
+            </div>
           </div>
         </div>
       </div>
@@ -157,11 +165,5 @@ label {
 .label-estado {
   width:120px;
   background-color:transparent;
-}
-input[type="button"]{
-  font-size: 14px;
-  border-style: outset;
-  width: 80px;
-  
 }
 </style>
