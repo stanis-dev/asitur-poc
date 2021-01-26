@@ -7,10 +7,10 @@
             :value="label"
             :disabled="disabled"
             :name="name"
+            :checked="checked"
             >
             {{label}}
         </label>
-
     </div>
 </template>
 
@@ -28,6 +28,9 @@ export default {
         },
         value: {
             type: String
+        },
+        checked:{
+            type: Boolean
         }
     }
 }

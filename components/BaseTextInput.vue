@@ -7,7 +7,7 @@
       :readonly="readonly"
       :value="value"
       :disabled="disabled"
-      :style="{ maxWidth: `${width}px` }"
+      :style="{ maxWidth: `${width}px`, background:`${background}!important` }"
       >
     </label>
  
@@ -34,6 +34,9 @@ export default {
       type: Boolean
     },
     value: {
+      type: String
+    },
+    background:{
       type: String
     }
   }

@@ -64,7 +64,7 @@
                 <header>Descripcion del siniestro</header>
               </div>
               <div class="bordered-container">
-                <BaseTextArea  :rows="4" :cols="50" :width="435" :text="'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'"/>
+                <BaseTextArea  :rows="4" :cols="50" :width="435" :text="'Lorem fistrum no te digo trigo por no llamarte Rodrigor no te digo trigo por no llamarte Rodrigor torpedo de la pradera está la cosa muy malar a peich no te digo trigo por no llamarte Rodrigor tiene musho peligro va usté muy cargadoo benemeritaar.'"/>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@
           <div class="bordered-container">
             <div>
               <div class="flex flex-start">
-                <BaseRadio :name="'estado'" :label="'Abierto'" class="label-estado" />
+                <BaseRadio :name="'estado'" :label="'Abierto'" class="label-estado" :checked="true" />
                 <label class="label-estado">Estado:</label>
                 <BaseRadio :name="'estado'" :label="'Cerrado'" class="label-estado" />
                 <label class="label-estado">F.Termin</label>
@@ -139,11 +139,34 @@
             <header>Satisfacción</header>
           </div>
           <div class="bordered-container">
-            <div>
               <BaseSelect />
+          </div>
+          <div>
+          <div class="subheader thin">
+            <header>¿Factura gestión?</header>
+          </div>
+          <div class="bordered-container ">
+            <div class="flex flex-space-between">
+              <BaseRadio :name="'factura'" :label="'Si'" :checked="true"/>
+              <BaseTextInput :width="110" :value="'No facturado'" :disabled="true" :background="'red'"/>
+            </div>
+            <div class="flex flex-space-between">
+              <BaseRadio :name="'factura'" :label="'No'"/>
+              <BaseTextInput :width="110" :disabled="true" :value="'13-09-15'"/>
             </div>
           </div>
         </div>
+        </div>
+        <div>
+          <div class="subheader thin">
+            <header>Gestion</header>
+          </div>
+          <div class="bordered-container">
+              <BaseTable />
+          </div>
+        </div>
+      </div>
+      <div class="flex">
       </div>
     </div>
   </section>
@@ -177,5 +200,8 @@ label {
 .label-estado {
   width:120px;
   background-color:transparent;
+}
+header{
+  color: blue;
 }
 </style>

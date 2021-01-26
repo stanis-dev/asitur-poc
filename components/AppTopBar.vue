@@ -1,51 +1,30 @@
 <template>
-  <v-app-bar color="#efebde" fixed app dense>
-    <a>
-      <v-icon class="mr-4">mdi-content-save-all-outline</v-icon>
-    </a>
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on, attrs }">
-        <a>
-          <v-icon
-            v-on="on"
-            v-bind="attrs"
-            class="mr-4"
-            @click="createNewWindow"
-            color="green"
-            >mdi-dock-window</v-icon
-          >
-        </a>
-      </template>
-      <span>New Window</span>
-    </v-tooltip>
-    <a>
-      <v-icon class="mr-4">mdi-desk-lamp</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-clipboard-text-search-outline</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-folder-search-outline</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-email-search-outline</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-file-search-outline</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-traffic-light</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-note-outline</v-icon>
-    </a>
-    <a>
-      <v-icon class="mr-4">mdi-paperclip</v-icon>
-    </a>
+<div class="nav">
+  <div class="items">
+      <i class="mdi mdi-content-save-all-outline"></i>
 
-    <v-spacer></v-spacer>
-    <span class="mr-4">Usuario: {{ user.user.displayName }}</span>
-  </v-app-bar>
+      <i @click="createNewWindow" class="mdi mdi-dock-window"></i>
+
+      <i class="mdi mdi-desk-lamp"></i>
+
+      <i class="mdi mdi-clipboard-text-search-outline"></i>
+
+      <i class="mdi mdi-folder-search-outline"></i>
+
+      <i class="mdi mdi-email-search-outline"></i>
+
+      <i class="mdi mdi-file-search-outline"></i>
+
+      <i class="mdi mdi-traffic-light"></i>
+
+      <i class="mdi mdi-note-outline"></i>
+
+      <i class="mdi mdi-paperclip"></i>
+    </div>
+    <div class="login">
+    <span>Usuario: {{ user.user.displayName }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -65,3 +44,19 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+  .nav{
+    display: flex;
+    margin-top: 24px;
+    padding: 0px 10px;
+    justify-content: space-between;
+    background: #efebde;
+    .items i{
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .items i:nth-child(2){
+      color :rgb(127, 161, 255);
+    }
+  }
+</style>
